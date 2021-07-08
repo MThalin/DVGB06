@@ -6,11 +6,34 @@ namespace MyAppliedProject
     public partial class Form1 : Form
     {
         Controller co;
+        int movX, movY;
+        bool isGrabbing;
 
         public Form1()
         {
             InitializeComponent();
             co = new Controller(this);
+
+            titlePanel.MouseMove += new MouseEventHandler(this.onMouseMove);
+            titlePanel.MouseDown += new MouseEventHandler(this.onMouseDown);
+            titlePanel.MouseUp += new MouseEventHandler(this.onMouseUp);
+        }
+
+        private void onMouseMove(object sender, MouseEventArgs e)
+        {
+            if (isGrabbing) { this.SetDesktopLocation(MousePosition.X - movX, MousePosition.Y - movY); }
+        }
+
+        private void onMouseDown(object sender, MouseEventArgs e)
+        {
+            isGrabbing = true;
+            movX = e.X;
+            movY = e.Y;
+        }
+
+        private void onMouseUp(object sender, MouseEventArgs e)
+        {
+            isGrabbing = false;
         }
 
         public void SetWeather(string weather)
@@ -51,6 +74,16 @@ namespace MyAppliedProject
             co.GmailAction(user, pass);
             co.FileAction("gmailuser", user);
             co.FileAction("gmailpass", pass);
+        }
+
+        private void closeBtn_Click(object sender, EventArgs e)
+        {
+            Environment.Exit(0);
+        }
+
+        private void minBtn_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
         }
 
         public void SetCookieData(string gUser, string gPass, string wCity)
