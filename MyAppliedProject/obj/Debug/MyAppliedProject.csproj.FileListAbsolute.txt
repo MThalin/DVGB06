@@ -24,3 +24,5 @@ C:\Users\TsoN\source\repos\MyAppliedProject\MyAppliedProject\bin\Debug\System.We
 C:\Users\TsoN\source\repos\MyAppliedProject\MyAppliedProject\obj\Debug\MyAppliedProject.csproj.CopyComplete
 C:\Users\TsoN\source\repos\MyAppliedProject\MyAppliedProject\bin\Debug\AE.Net.Mail.dll
 C:\Users\TsoN\source\repos\MyAppliedProject\MyAppliedProject\bin\Debug\AE.Net.Mail.pdb
+C:\Users\TsoN\source\repos\MyAppliedProject\MyAppliedProject\obj\Debug\MyAppliedProject.Form2.resources
+C:\Users\TsoN\source\repos\MyAppliedProject\MyAppliedProject\obj\Debug\MyAppliedProject.Form3.resources

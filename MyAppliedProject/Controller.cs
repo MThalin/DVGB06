@@ -4,16 +4,18 @@ namespace MyAppliedProject
 {
     class Controller
     {
-        Form1 f1;
-        Form2 f2;
+        Form1 fo1;
+        Form2 fo2;
+        Form3 fo3;
         Weather we;
         Gmail gm;
         FileHandler fh;
 
-        public Controller(Form1 formIn)
+        public Controller(Form1 fo1In, Form2 fo2In, Form3 fo3In)
         {
-            f1 = formIn;
-            f2 = new Form2(this);
+            fo1 = fo1In;
+            fo2 = fo2In;
+            fo3 = fo3In;
             we = new Weather(this);
             gm = new Gmail(this);
             fh = new FileHandler(this);
@@ -26,7 +28,7 @@ namespace MyAppliedProject
 
         public void WeatherReAction(string weather)
         {
-            f1.SetWeather(weather);
+            fo1.SetWeather(weather);
         }
 
         public void GmailAction(string user, string pass)
@@ -34,9 +36,9 @@ namespace MyAppliedProject
             gm.SetEmails(user, pass);
         }
 
-        public void GmailReAction(string f1, string f2, string f3, string s1, string s2, string s3, string b1, string b2, string b3)
+        public void GmailReAction(string f1, string f2, string s1, string s2, string b1, string b2)
         {
-            f1.SetEmails(f1, f2, f3, s1, s2, s3, b1, b2, b3);
+            fo2.SetEmails(f1, f2, s1, s2, b1, b2);
         }
 
         public void FileAction(string element, string content)
@@ -46,7 +48,8 @@ namespace MyAppliedProject
 
         public void FileReAction(string gUser, string gPass, string wCity)
         {
-            f1.SetCookieData(gUser, gPass, wCity);
+            fo1.SetCookieData(wCity);
+            fo3.SetCookieData(gUser, gPass);
         }
 
     }

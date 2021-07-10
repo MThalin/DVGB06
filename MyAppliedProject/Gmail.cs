@@ -7,9 +7,9 @@ namespace MyAppliedProject
     {
         Controller co;
         static ImapClient ic;
-        private string from1, from2, from3;
-        private string subject1, subject2, subject3;
-        private string body1, body2, body3;
+        private string from1, from2;
+        private string subject1, subject2;
+        private string body1, body2;
 
         public Gmail(Controller coIn)
         {
@@ -34,11 +34,6 @@ namespace MyAppliedProject
             from2 = email2.From.ToString();
             subject2 = email2.Subject;
             body2 = email2.Body;
-
-            var email3 = ic.GetMessage(ic.GetMessageCount() - 3);
-            from3 = email3.From.ToString();
-            subject3 = email3.Subject;
-            body3 = email3.Body;
         }
 
         public void SetEmails(string user, string pass)
@@ -47,7 +42,7 @@ namespace MyAppliedProject
             {
                 Login(user, pass);
                 GetEmails();
-                co.GmailReAction(from1, from2, from3, subject1, subject2, subject3, body1, body2, body3);
+                co.GmailReAction(from1, from2, subject1, subject2, body1, body2);
             }
 
             catch (Exception ex)
