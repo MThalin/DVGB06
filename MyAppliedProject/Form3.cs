@@ -30,5 +30,10 @@ namespace MyAppliedProject
             UserLoginBox.Text = gUser;
             PassLoginBox.Text = gPass;
         }
+
+        public void PopMsg()
+        {
+            MessageBox.Show("Something went wrong!\nMake sure you entered the correct username & password.");
+        }
     }
 }

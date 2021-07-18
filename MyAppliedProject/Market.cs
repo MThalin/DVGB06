@@ -5,34 +5,34 @@ using System.Net.Http;
 
 namespace MyAppliedProject
 {
-    class Weather
+    class Market
     {
         Controller co;
 
         private string url;
         private string id;
-        private string city;
+        private string stock;
 
-        public Weather(Controller coIn)
+        public Market(Controller coIn)
         {
             co = coIn;
-            id = "6fa49b63cc06c4714a8268fda07fa8e1";
+            id = "9c7ddef97dmshd96741f13a5fd7bp16da3djsn25cf8f5c6079";
         }
 
-        public void GetWeather(string cityIn)
+        public void GetMarket(string stockIn)
         {
-            city = cityIn;
-            GetWeatherData();
+            stock = stockIn;
+            GetMarketData();
         }
 
-        public void SetWeather(string weather)
+        public void SetChange(string change)
         {
-            co.WeatherReAction(weather);
+            co.MarketReAction(change);
         }
 
-        private async void GetWeatherData()
+        private async void GetMarketData()
         {
-            url = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=" + id;
+               url = "https://www.alphavantage.co/query?function=GLOBAL_QUOTE&symbol=" + stock + "&apikey=" + id;
 
             using (var client = new HttpClient())
             {
@@ -46,23 +46,22 @@ namespace MyAppliedProject
                     {
                         string strResult = await response.Content.ReadAsStringAsync();
                         dynamic data = JObject.Parse(strResult);
-                        double kelvin = data.main.temp;
-                        double celcius = kelvin - 273.15;
-                        double temp = Math.Round(celcius, 1);
-                        string weather = temp.ToString() + " C";
+                        string valueChange = data["Global Quote"]["09. change"];
+                        string percentChange = data["Global Quote"]["10. change percent"];
+                        string change = valueChange + " USD (" + percentChange + ")";
 
-                        SetWeather(weather);
+                        SetChange(change);
                     }
                     else
                     {
-                        SetWeather("N/A");
+                        SetChange("N/A");
                     }
                 }
 
                 catch (Exception ex)
                 {
                     Console.WriteLine(ex);
-                    SetWeather("N/A");
+                    SetChange("N/A");
                 }
             }
         }

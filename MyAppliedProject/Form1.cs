@@ -47,7 +47,12 @@ namespace MyAppliedProject
 
         public void SetWeather(string weather)
         {
-            WeatherLabel.Text = weather + " C";
+            WeatherLabel.Text = weather;
+        }
+
+        public void SetChange(string change)
+        {
+            MarketLabel.Text = change;
         }
 
         private void TempButton_Click(object sender, EventArgs e)
@@ -65,8 +70,6 @@ namespace MyAppliedProject
 
         public void SignIn(string userIn, string passIn)
         {
-            openMailForm();
-
             string user = userIn;
             string pass = passIn;
             co.GmailAction(user, pass);
@@ -84,9 +87,10 @@ namespace MyAppliedProject
             this.WindowState = FormWindowState.Minimized;
         }
 
-        public void SetCookieData(string wCity)
+        public void SetCookieData(string wCity, string mStock)
         {
             WeatherBox.Text = wCity;
+            MarketBox.Text = mStock;
         }
 
         public void openLoginForm ()
@@ -136,6 +140,13 @@ namespace MyAppliedProject
         private void downBtn_Click(object sender, EventArgs e)
         {
             this.Size = new Size(this.Width, 800);
+        }
+
+        private void MarketButton_Click(object sender, EventArgs e)
+        {
+            string stock = MarketBox.Text;
+            co.MarketAction(stock);
+            co.FileAction("marketstock", stock);
         }
 
         public void openMailForm()

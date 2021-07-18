@@ -30,8 +30,9 @@ namespace MyAppliedProject
                 string gmailuser = myNode.SelectSingleNode("gmailuser").InnerText.Trim();
                 string gmailpass = myNode.SelectSingleNode("gmailpass").InnerText.Trim();
                 string weathercity = myNode.SelectSingleNode("weathercity").InnerText.Trim();
+                string marketstock = myNode.SelectSingleNode("marketstock").InnerText.Trim();
 
-                co.FileReAction(gmailuser, gmailpass, weathercity);
+                co.FileReAction(gmailuser, gmailpass, weathercity, marketstock);
             }
             catch (Exception ex)
             {

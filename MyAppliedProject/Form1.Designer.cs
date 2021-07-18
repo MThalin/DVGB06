@@ -46,9 +46,9 @@ namespace MyAppliedProject
             this.rightPanelFlow = new System.Windows.Forms.FlowLayoutPanel();
             this.weatherPanel = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.MarketBox = new System.Windows.Forms.TextBox();
+            this.MarketLabel = new System.Windows.Forms.Label();
+            this.MarketButton = new System.Windows.Forms.Button();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -273,9 +273,9 @@ namespace MyAppliedProject
             this.tableLayoutPanel2.ColumnCount = 2;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 80F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel2.Controls.Add(this.textBox1, 0, 0);
-            this.tableLayoutPanel2.Controls.Add(this.label1, 0, 1);
-            this.tableLayoutPanel2.Controls.Add(this.button1, 1, 0);
+            this.tableLayoutPanel2.Controls.Add(this.MarketBox, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.MarketLabel, 0, 1);
+            this.tableLayoutPanel2.Controls.Add(this.MarketButton, 1, 0);
             this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 111);
             this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(3, 3, 3, 40);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
@@ -285,42 +285,43 @@ namespace MyAppliedProject
             this.tableLayoutPanel2.Size = new System.Drawing.Size(124, 55);
             this.tableLayoutPanel2.TabIndex = 16;
             // 
-            // textBox1
+            // MarketBox
             // 
-            this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox1.ForeColor = System.Drawing.Color.White;
-            this.textBox1.Location = new System.Drawing.Point(3, 3);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(93, 20);
-            this.textBox1.TabIndex = 3;
-            this.textBox1.Text = "Test (table 2)";
+            this.MarketBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.MarketBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.MarketBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.MarketBox.ForeColor = System.Drawing.Color.White;
+            this.MarketBox.Location = new System.Drawing.Point(3, 3);
+            this.MarketBox.Name = "MarketBox";
+            this.MarketBox.Size = new System.Drawing.Size(93, 20);
+            this.MarketBox.TabIndex = 3;
+            this.MarketBox.Text = "Test (table 2)";
             // 
-            // label1
+            // MarketLabel
             // 
-            this.label1.AutoSize = true;
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.label1.Location = new System.Drawing.Point(5, 27);
-            this.label1.Margin = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(19, 13);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "----";
+            this.MarketLabel.AutoSize = true;
+            this.MarketLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.MarketLabel.Location = new System.Drawing.Point(5, 27);
+            this.MarketLabel.Margin = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            this.MarketLabel.Name = "MarketLabel";
+            this.MarketLabel.Size = new System.Drawing.Size(19, 13);
+            this.MarketLabel.TabIndex = 4;
+            this.MarketLabel.Text = "----";
             // 
-            // button1
+            // MarketButton
             // 
-            this.button1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.button1.Location = new System.Drawing.Point(102, 3);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(19, 21);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Get";
-            this.button1.UseVisualStyleBackColor = true;
+            this.MarketButton.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.MarketButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.MarketButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.MarketButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MarketButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.MarketButton.Location = new System.Drawing.Point(102, 3);
+            this.MarketButton.Name = "MarketButton";
+            this.MarketButton.Size = new System.Drawing.Size(19, 21);
+            this.MarketButton.TabIndex = 2;
+            this.MarketButton.Text = "Get";
+            this.MarketButton.UseVisualStyleBackColor = true;
+            this.MarketButton.Click += new System.EventHandler(this.MarketButton_Click);
             // 
             // tableLayoutPanel3
             // 
@@ -510,9 +511,9 @@ namespace MyAppliedProject
         private System.Windows.Forms.FlowLayoutPanel rightPanelFlow;
         private System.Windows.Forms.TableLayoutPanel weatherPanel;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox MarketBox;
+        private System.Windows.Forms.Label MarketLabel;
+        private System.Windows.Forms.Button MarketButton;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label2;

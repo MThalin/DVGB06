@@ -48,6 +48,7 @@ namespace MyAppliedProject
             catch (Exception ex)
             {
                 Console.WriteLine(ex);
+                co.MailFail();
             }
         }
 
