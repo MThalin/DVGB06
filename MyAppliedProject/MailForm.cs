@@ -3,14 +3,14 @@ using System.Windows.Forms;
 
 namespace MyAppliedProject
 { 
-    public partial class Form2 : Form
+    public partial class MailForm : Form
     {
-        Form1 fo1;
+        BaseForm bForm;
 
-        public Form2(Form1 fo1In)
+        public MailForm(BaseForm bFormIn)
         {
             InitializeComponent();
-            fo1 = fo1In;
+            bForm = bFormIn;
         }
 
         public void SetEmails(string f1, string f2, string s1, string s2, string b1, string b2)
@@ -25,9 +25,7 @@ namespace MyAppliedProject
 
         private void signOutBtn_Click(object sender, EventArgs e)
         {
-            fo1.openLoginForm();
+            bForm.openLoginForm();
         }
-
-
     }
 }

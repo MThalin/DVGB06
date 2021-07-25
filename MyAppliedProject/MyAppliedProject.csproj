@@ -72,47 +72,59 @@
   <ItemGroup>
     <Compile Include="Controller.cs" />
     <Compile Include="FileHandler.cs" />
-    <Compile Include="Form1.cs">
+    <Compile Include="BaseForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="BaseForm.Designer.cs">
+      <DependentUpon>BaseForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form2.cs">
+    <Compile Include="Hotmail.cs" />
+    <Compile Include="MailForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form2.Designer.cs">
-      <DependentUpon>Form2.cs</DependentUpon>
+    <Compile Include="MailForm.Designer.cs">
+      <DependentUpon>MailForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form3.cs">
+    <Compile Include="LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form3.Designer.cs">
-      <DependentUpon>Form3.cs</DependentUpon>
+    <Compile Include="LoginForm.Designer.cs">
+      <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Gmail.cs" />
     <Compile Include="Market.cs" />
+    <Compile Include="Performance.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="SettingForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SettingForm.Designer.cs">
+      <DependentUpon>SettingForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Weather.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="BaseForm.resx">
+      <DependentUpon>BaseForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form2.resx">
-      <DependentUpon>Form2.cs</DependentUpon>
+    <EmbeddedResource Include="MailForm.resx">
+      <DependentUpon>MailForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form3.resx">
-      <DependentUpon>Form3.cs</DependentUpon>
+    <EmbeddedResource Include="LoginForm.resx">
+      <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
+    <EmbeddedResource Include="SettingForm.resx">
+      <DependentUpon>SettingForm.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -126,6 +138,75 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\outlook-logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\gmail-logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\clear.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\clear.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\clouds.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\mist.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\rain.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\snow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\thunder.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\right.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\up.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\decrease.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\down.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\increase.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\left.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\clearTest.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\color.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\message.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\placeholderlogo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\search.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\settings.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\subject.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\from.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

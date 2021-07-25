@@ -1,7 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <cookie>
+  <chosenmail>outlook</chosenmail>
   <gmailuser>testapplied21@gmail.com</gmailuser>
-  <gmailpass>lxyupkcezseonxmw</gmailpass>
+  <gmailpass>
+  </gmailpass>
+  <outlookuser>testapplied21@outlook.com</outlookuser>
+  <outlookpass>
+  </outlookpass>
   <weathercity>karlstad</weathercity>
   <marketstock>nvda</marketstock>
 </cookie>

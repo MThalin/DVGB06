@@ -27,12 +27,15 @@ namespace MyAppliedProject
                 myDoc.Load(myFile);
                 myNode = myDoc.SelectSingleNode("cookie");
 
+                string chosenmail = myNode.SelectSingleNode("chosenmail").InnerText.Trim();
                 string gmailuser = myNode.SelectSingleNode("gmailuser").InnerText.Trim();
                 string gmailpass = myNode.SelectSingleNode("gmailpass").InnerText.Trim();
+                string outlookuser = myNode.SelectSingleNode("outlookuser").InnerText.Trim();
+                string outlookpass = myNode.SelectSingleNode("outlookpass").InnerText.Trim();
                 string weathercity = myNode.SelectSingleNode("weathercity").InnerText.Trim();
                 string marketstock = myNode.SelectSingleNode("marketstock").InnerText.Trim();
 
-                co.FileReAction(gmailuser, gmailpass, weathercity, marketstock);
+                co.FileReAction(chosenmail, gmailuser, gmailpass, outlookuser, outlookpass, weathercity, marketstock);
             }
             catch (Exception ex)
             {

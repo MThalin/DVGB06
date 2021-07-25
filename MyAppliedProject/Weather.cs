@@ -25,14 +25,9 @@ namespace MyAppliedProject
             GetWeatherData();
         }
 
-        public void SetWeather(string weather)
-        {
-            co.WeatherReAction(weather);
-        }
-
         private async void GetWeatherData()
         {
-            url = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=" + id;
+            url = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&units=metric&appid=" + id;
 
             using (var client = new HttpClient())
             {
@@ -46,23 +41,25 @@ namespace MyAppliedProject
                     {
                         string strResult = await response.Content.ReadAsStringAsync();
                         dynamic data = JObject.Parse(strResult);
-                        double kelvin = data.main.temp;
-                        double celcius = kelvin - 273.15;
-                        double temp = Math.Round(celcius, 1);
-                        string weather = temp.ToString() + " C";
+                        string condition = data["weather"][0]["main"];
+                        double celsius = data.main.temp;
+                        double tmp = Math.Round(celsius, 1);
+                        string weather = tmp.ToString() + " C";
 
-                        SetWeather(weather);
+                        Console.WriteLine(condition);
+
+                        co.WeatherReAction(weather, condition);
                     }
                     else
                     {
-                        SetWeather("N/A");
+                        co.WeatherReAction("N/A", "");
                     }
                 }
 
                 catch (Exception ex)
                 {
                     Console.WriteLine(ex);
-                    SetWeather("N/A");
+                    co.WeatherReAction("N/A", "");
                 }
             }
         }

@@ -50,6 +50,8 @@ namespace MyAppliedProject
                         string percentChange = data["Global Quote"]["10. change percent"];
                         string change = valueChange + " USD (" + percentChange + ")";
 
+                        if (!change.Contains("-")) { change = "+" + change; }
+
                         SetChange(change);
                     }
                     else

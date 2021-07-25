@@ -2,7 +2,6 @@ C:\Users\TsoN\source\repos\MyAppliedProject\MyAppliedProject\bin\Debug\MyApplied
 C:\Users\TsoN\source\repos\MyAppliedProject\MyAppliedProject\bin\Debug\MyAppliedProject.exe
 C:\Users\TsoN\source\repos\MyAppliedProject\MyAppliedProject\bin\Debug\MyAppliedProject.pdb
 C:\Users\TsoN\source\repos\MyAppliedProject\MyAppliedProject\obj\Debug\MyAppliedProject.csprojAssemblyReference.cache
-C:\Users\TsoN\source\repos\MyAppliedProject\MyAppliedProject\obj\Debug\MyAppliedProject.Form1.resources
 C:\Users\TsoN\source\repos\MyAppliedProject\MyAppliedProject\obj\Debug\MyAppliedProject.Properties.Resources.resources
 C:\Users\TsoN\source\repos\MyAppliedProject\MyAppliedProject\obj\Debug\MyAppliedProject.csproj.GenerateResource.cache
 C:\Users\TsoN\source\repos\MyAppliedProject\MyAppliedProject\obj\Debug\MyAppliedProject.csproj.CoreCompileInputs.cache
@@ -24,5 +23,7 @@ C:\Users\TsoN\source\repos\MyAppliedProject\MyAppliedProject\bin\Debug\System.We
 C:\Users\TsoN\source\repos\MyAppliedProject\MyAppliedProject\obj\Debug\MyAppliedProject.csproj.CopyComplete
 C:\Users\TsoN\source\repos\MyAppliedProject\MyAppliedProject\bin\Debug\AE.Net.Mail.dll
 C:\Users\TsoN\source\repos\MyAppliedProject\MyAppliedProject\bin\Debug\AE.Net.Mail.pdb
-C:\Users\TsoN\source\repos\MyAppliedProject\MyAppliedProject\obj\Debug\MyAppliedProject.Form2.resources
-C:\Users\TsoN\source\repos\MyAppliedProject\MyAppliedProject\obj\Debug\MyAppliedProject.Form3.resources
+C:\Users\TsoN\source\repos\MyAppliedProject\MyAppliedProject\obj\Debug\MyAppliedProject.BaseForm.resources
+C:\Users\TsoN\source\repos\MyAppliedProject\MyAppliedProject\obj\Debug\MyAppliedProject.MailForm.resources
+C:\Users\TsoN\source\repos\MyAppliedProject\MyAppliedProject\obj\Debug\MyAppliedProject.LoginForm.resources
+C:\Users\TsoN\source\repos\MyAppliedProject\MyAppliedProject\obj\Debug\MyAppliedProject.SettingForm.resources
