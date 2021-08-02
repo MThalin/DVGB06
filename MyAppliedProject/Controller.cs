@@ -5,26 +5,18 @@ namespace MyAppliedProject
     class Controller
     {
         BaseForm bForm;
-        MailForm mForm;
-        LoginForm lForm;
-        SettingForm sForm;
         Weather we;
         Market ma;
-        Gmail gm;
-        Hotmail hm;
+        Mail ml;
         FileHandler fh;
         Performance pe;
 
-        public Controller(BaseForm bFormIn, MailForm mFormIn, LoginForm lFormIn, SettingForm sFormIn)
+        public Controller(BaseForm bFormIn)
         {
             bForm = bFormIn;
-            mForm = mFormIn;
-            lForm = lFormIn;
-            sForm = sFormIn;
             we = new Weather(this);
             ma = new Market(this);
-            gm = new Gmail(this);
-            hm = new Hotmail(this);
+            ml = new Mail(this);
             fh = new FileHandler(this);
             pe = new Performance(this);
         }
@@ -49,25 +41,24 @@ namespace MyAppliedProject
             bForm.SetChange(change);
         }
 
-        public void GmailAction(string user, string pass)
+        public void MailLogin(string mail, string user, string pass)
         {
-            gm.SetEmails(user, pass);
+            ml.Login(mail, user, pass);
         }
 
-        public void OutlookAction(string user, string pass)
+        public void MailAction()
         {
-            hm.SetEmails(user, pass);
+            ml.GetEmails();
         }
 
-        public void GmailReAction(string f1, string f2, string s1, string s2, string b1, string b2)
+        public void MailReAction(string f1, string f2, string s1, string s2, string b1, string b2)
         {
-            mForm.SetEmails(f1, f2, s1, s2, b1, b2);
-            bForm.openMailForm();
+            bForm.UpdateMail(f1, f2, s1, s2, b1, b2);
         }
 
-        public void MailFail()
+        public void PopUp(string msg)
         {
-            lForm.PopMsg();
+            bForm.PopMsg(msg);
         }
 
         public void FileAction(string element, string content)
@@ -75,10 +66,9 @@ namespace MyAppliedProject
             fh.EditXML(element, content);
         }
 
-        public void FileReAction(string mail, string gUser, string gPass, string oUser, string oPass, string wCity, string mStock)
+        public void FileReAction(string rgb, string height, string width, string passCheck, string mail, string gUser, string gPass, string oUser, string oPass, string wCheck, string wCity, string mCheck, string mStock, string pCheck)
         {
-            bForm.SetCookieData(wCity, mStock);
-            lForm.SetCookieData(mail, gUser, gPass, oUser, oPass);
+            bForm.SetCookieData(rgb, height, width, passCheck, mail, gUser, gPass, oUser, oPass, wCheck, wCity, mCheck, mStock, pCheck);
         }
 
         public void PerformanceAction()

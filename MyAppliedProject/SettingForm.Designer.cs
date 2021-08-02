@@ -29,11 +29,15 @@ namespace MyAppliedProject
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SettingForm));
             this.titlePanel = new System.Windows.Forms.Panel();
             this.closeBtn = new System.Windows.Forms.Button();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.upBtn = new System.Windows.Forms.Button();
+            this.leftBtn = new System.Windows.Forms.Button();
+            this.rightBtn = new System.Windows.Forms.Button();
+            this.downBtn = new System.Windows.Forms.Button();
+            this.ColorBox = new System.Windows.Forms.PictureBox();
             this.ClearBtn = new System.Windows.Forms.Button();
             this.SaveBtn = new System.Windows.Forms.Button();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
@@ -41,17 +45,12 @@ namespace MyAppliedProject
             this.WeatherCheck = new System.Windows.Forms.CheckBox();
             this.MarketCheck = new System.Windows.Forms.CheckBox();
             this.PerformanceCheck = new System.Windows.Forms.CheckBox();
-            this.upBtn = new System.Windows.Forms.Button();
-            this.leftBtn = new System.Windows.Forms.Button();
-            this.rightBtn = new System.Windows.Forms.Button();
-            this.downBtn = new System.Windows.Forms.Button();
-            this.ColorBox = new System.Windows.Forms.PictureBox();
             this.titlePanel.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ColorBox)).BeginInit();
             this.tableLayoutPanel3.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ColorBox)).BeginInit();
             this.SuspendLayout();
             // 
             // titlePanel
@@ -63,6 +62,9 @@ namespace MyAppliedProject
             this.titlePanel.Name = "titlePanel";
             this.titlePanel.Size = new System.Drawing.Size(300, 24);
             this.titlePanel.TabIndex = 20;
+            this.titlePanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.titlePanel_MouseDown);
+            this.titlePanel.MouseMove += new System.Windows.Forms.MouseEventHandler(this.titlePanel_MouseMove);
+            this.titlePanel.MouseUp += new System.Windows.Forms.MouseEventHandler(this.titlePanel_MouseUp);
             // 
             // closeBtn
             // 
@@ -114,6 +116,91 @@ namespace MyAppliedProject
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel2.Size = new System.Drawing.Size(147, 132);
             this.tableLayoutPanel2.TabIndex = 0;
+            // 
+            // upBtn
+            // 
+            this.upBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.upBtn.BackgroundImage = global::MyAppliedProject.Properties.Resources.up;
+            this.upBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.upBtn.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.upBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.upBtn.FlatAppearance.BorderSize = 0;
+            this.upBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.upBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.upBtn.Location = new System.Drawing.Point(52, 3);
+            this.upBtn.Name = "upBtn";
+            this.upBtn.Size = new System.Drawing.Size(43, 38);
+            this.upBtn.TabIndex = 25;
+            this.upBtn.UseVisualStyleBackColor = false;
+            this.upBtn.Click += new System.EventHandler(this.upBtn_Click);
+            // 
+            // leftBtn
+            // 
+            this.leftBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.leftBtn.BackgroundImage = global::MyAppliedProject.Properties.Resources.left;
+            this.leftBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.leftBtn.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.leftBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.leftBtn.FlatAppearance.BorderSize = 0;
+            this.leftBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.leftBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.leftBtn.Location = new System.Drawing.Point(3, 47);
+            this.leftBtn.Name = "leftBtn";
+            this.leftBtn.Size = new System.Drawing.Size(43, 38);
+            this.leftBtn.TabIndex = 24;
+            this.leftBtn.UseVisualStyleBackColor = false;
+            this.leftBtn.Click += new System.EventHandler(this.leftBtn_Click);
+            // 
+            // rightBtn
+            // 
+            this.rightBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.rightBtn.BackgroundImage = global::MyAppliedProject.Properties.Resources.right;
+            this.rightBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.rightBtn.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.rightBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.rightBtn.FlatAppearance.BorderSize = 0;
+            this.rightBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rightBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.rightBtn.Location = new System.Drawing.Point(101, 47);
+            this.rightBtn.Name = "rightBtn";
+            this.rightBtn.Size = new System.Drawing.Size(43, 38);
+            this.rightBtn.TabIndex = 23;
+            this.rightBtn.UseVisualStyleBackColor = false;
+            this.rightBtn.Click += new System.EventHandler(this.rightBtn_Click);
+            // 
+            // downBtn
+            // 
+            this.downBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.downBtn.BackgroundImage = global::MyAppliedProject.Properties.Resources.down;
+            this.downBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.downBtn.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.downBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.downBtn.FlatAppearance.BorderSize = 0;
+            this.downBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.downBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.downBtn.Location = new System.Drawing.Point(52, 91);
+            this.downBtn.Name = "downBtn";
+            this.downBtn.Size = new System.Drawing.Size(43, 38);
+            this.downBtn.TabIndex = 26;
+            this.downBtn.UseVisualStyleBackColor = false;
+            this.downBtn.Click += new System.EventHandler(this.downBtn_Click);
+            // 
+            // ColorBox
+            // 
+            this.ColorBox.BackgroundImage = global::MyAppliedProject.Properties.Resources.color;
+            this.ColorBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.ColorBox.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.ColorBox.Cursor = System.Windows.Forms.Cursors.Cross;
+            this.ColorBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ColorBox.Location = new System.Drawing.Point(3, 141);
+            this.ColorBox.Margin = new System.Windows.Forms.Padding(3, 3, 3, 0);
+            this.ColorBox.Name = "ColorBox";
+            this.ColorBox.Size = new System.Drawing.Size(147, 135);
+            this.ColorBox.TabIndex = 1;
+            this.ColorBox.TabStop = false;
+            this.ColorBox.MouseDown += new System.Windows.Forms.MouseEventHandler(this.ColorBox_MouseDown);
+            this.ColorBox.MouseMove += new System.Windows.Forms.MouseEventHandler(this.ColorBox_MouseMove);
+            this.ColorBox.MouseUp += new System.Windows.Forms.MouseEventHandler(this.ColorBox_MouseUp);
             // 
             // ClearBtn
             // 
@@ -230,83 +317,6 @@ namespace MyAppliedProject
             this.PerformanceCheck.UseVisualStyleBackColor = false;
             this.PerformanceCheck.CheckedChanged += new System.EventHandler(this.PerformanceCheck_CheckedChanged);
             // 
-            // upBtn
-            // 
-            this.upBtn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("upBtn.BackgroundImage")));
-            this.upBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.upBtn.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.upBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.upBtn.FlatAppearance.BorderSize = 0;
-            this.upBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.upBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.upBtn.Location = new System.Drawing.Point(51, 3);
-            this.upBtn.Name = "upBtn";
-            this.upBtn.Size = new System.Drawing.Size(42, 37);
-            this.upBtn.TabIndex = 25;
-            this.upBtn.UseVisualStyleBackColor = true;
-            this.upBtn.Click += new System.EventHandler(this.upBtn_Click);
-            // 
-            // leftBtn
-            // 
-            this.leftBtn.BackgroundImage = global::MyAppliedProject.Properties.Resources.left;
-            this.leftBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.leftBtn.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.leftBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.leftBtn.FlatAppearance.BorderSize = 0;
-            this.leftBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.leftBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.leftBtn.Location = new System.Drawing.Point(3, 46);
-            this.leftBtn.Name = "leftBtn";
-            this.leftBtn.Size = new System.Drawing.Size(42, 37);
-            this.leftBtn.TabIndex = 24;
-            this.leftBtn.UseVisualStyleBackColor = true;
-            this.leftBtn.Click += new System.EventHandler(this.leftBtn_Click);
-            // 
-            // rightBtn
-            // 
-            this.rightBtn.BackgroundImage = global::MyAppliedProject.Properties.Resources.right;
-            this.rightBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.rightBtn.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.rightBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.rightBtn.FlatAppearance.BorderSize = 0;
-            this.rightBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.rightBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.rightBtn.Location = new System.Drawing.Point(99, 46);
-            this.rightBtn.Name = "rightBtn";
-            this.rightBtn.Size = new System.Drawing.Size(45, 37);
-            this.rightBtn.TabIndex = 23;
-            this.rightBtn.UseVisualStyleBackColor = true;
-            this.rightBtn.Click += new System.EventHandler(this.rightBtn_Click);
-            // 
-            // downBtn
-            // 
-            this.downBtn.BackgroundImage = global::MyAppliedProject.Properties.Resources.down;
-            this.downBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.downBtn.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.downBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.downBtn.FlatAppearance.BorderSize = 0;
-            this.downBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.downBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.downBtn.Location = new System.Drawing.Point(51, 89);
-            this.downBtn.Name = "downBtn";
-            this.downBtn.Size = new System.Drawing.Size(42, 40);
-            this.downBtn.TabIndex = 26;
-            this.downBtn.UseVisualStyleBackColor = true;
-            this.downBtn.Click += new System.EventHandler(this.downBtn_Click);
-            // 
-            // ColorBox
-            // 
-            this.ColorBox.BackgroundImage = global::MyAppliedProject.Properties.Resources.color;
-            this.ColorBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.ColorBox.Cursor = System.Windows.Forms.Cursors.Cross;
-            this.ColorBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ColorBox.Location = new System.Drawing.Point(3, 141);
-            this.ColorBox.Margin = new System.Windows.Forms.Padding(3, 3, 3, 0);
-            this.ColorBox.Name = "ColorBox";
-            this.ColorBox.Size = new System.Drawing.Size(147, 135);
-            this.ColorBox.TabIndex = 1;
-            this.ColorBox.TabStop = false;
-            // 
             // SettingForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -324,10 +334,10 @@ namespace MyAppliedProject
             this.titlePanel.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.ColorBox)).EndInit();
             this.tableLayoutPanel3.ResumeLayout(false);
             this.flowLayoutPanel1.ResumeLayout(false);
             this.flowLayoutPanel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ColorBox)).EndInit();
             this.ResumeLayout(false);
 
         }

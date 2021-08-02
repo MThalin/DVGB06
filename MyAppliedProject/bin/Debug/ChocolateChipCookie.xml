@@ -1,12 +1,17 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<cookie>
+<cookies>
+  <rgb>254,50,178</rgb>
+  <height>400</height>
+  <width>400</width>
+  <passcheck>True</passcheck>
   <chosenmail>outlook</chosenmail>
-  <gmailuser>testapplied21@gmail.com</gmailuser>
-  <gmailpass>
-  </gmailpass>
+  <gmailuser />
+  <gmailpass />
   <outlookuser>testapplied21@outlook.com</outlookuser>
-  <outlookpass>
-  </outlookpass>
+  <outlookpass>dvgb06st21</outlookpass>
+  <weathercheck>True</weathercheck>
   <weathercity>karlstad</weathercity>
+  <marketcheck>True</marketcheck>
   <marketstock>nvda</marketstock>
-</cookie>
+  <performancecheck>True</performancecheck>
+</cookies>

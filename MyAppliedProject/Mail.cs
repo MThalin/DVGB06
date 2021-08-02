@@ -3,7 +3,7 @@ using System;
 
 namespace MyAppliedProject
 {
-    class Gmail
+    class Mail
     {
         Controller co;
         static ImapClient ic;
@@ -11,17 +11,29 @@ namespace MyAppliedProject
         private string subject1, subject2;
         private string body1, body2;
 
-        public Gmail(Controller coIn)
+        public Mail(Controller coIn)
         {
             co = coIn;
         }
 
-        private void Login(string user, string pass)
+        public void Login(string mail, string user, string pass)
         {
-            ic = new ImapClient("imap.gmail.com", user, pass, AuthMethods.Login, 993, true);
+            switch (mail)
+            {
+                case "gmail":
+                    ic = new ImapClient("imap.gmail.com", user, pass, AuthMethods.Login, 993, true);
+                    break;
+
+                case "outlook":
+                    ic = new ImapClient("outlook.office365.com", user, pass, AuthMethods.Login, 993, true);
+                    break;
+
+                default:
+                    break;
+            }
         }
 
-        private void GetEmails()
+        public void GetEmails()
         {
             ic.SelectMailbox("INBOX");
 
@@ -34,23 +46,8 @@ namespace MyAppliedProject
             from2 = email2.From.ToString();
             subject2 = email2.Subject;
             body2 = email2.Body;
+
+            co.MailReAction(from1, from2, subject1, subject2, body1, body2);
         }
-
-        public void SetEmails(string user, string pass)
-        {
-            try
-            {
-                Login(user, pass);
-                GetEmails();
-                co.GmailReAction(from1, from2, subject1, subject2, body1, body2);
-            }
-
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex);
-                co.MailFail();
-            }
-        }
-
     }
 }

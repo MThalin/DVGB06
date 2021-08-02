@@ -21,7 +21,11 @@ namespace MyAppliedProject
 
         public void GetWeather(string cityIn)
         {
-            city = cityIn;
+            if (cityIn != "update")
+            {
+                city = cityIn;
+            }
+            
             GetWeatherData();
         }
 
@@ -45,8 +49,6 @@ namespace MyAppliedProject
                         double celsius = data.main.temp;
                         double tmp = Math.Round(celsius, 1);
                         string weather = tmp.ToString() + " C";
-
-                        Console.WriteLine(condition);
 
                         co.WeatherReAction(weather, condition);
                     }

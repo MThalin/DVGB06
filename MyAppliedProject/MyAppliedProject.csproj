@@ -78,7 +78,6 @@
     <Compile Include="BaseForm.Designer.cs">
       <DependentUpon>BaseForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Hotmail.cs" />
     <Compile Include="MailForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -91,7 +90,7 @@
     <Compile Include="LoginForm.Designer.cs">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Gmail.cs" />
+    <Compile Include="Mail.cs" />
     <Compile Include="Market.cs" />
     <Compile Include="Performance.cs" />
     <Compile Include="Program.cs" />
@@ -183,9 +182,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="img\left.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="img\clearTest.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="img\color.png" />

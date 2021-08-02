@@ -29,59 +29,46 @@ namespace MyAppliedProject
         /// </summary>
         private void InitializeComponent()
         {
-            this.WeatherButton = new System.Windows.Forms.Button();
+            this.components = new System.ComponentModel.Container();
             this.WeatherBox = new System.Windows.Forms.TextBox();
             this.WeatherLabel = new System.Windows.Forms.Label();
             this.titlePanel = new System.Windows.Forms.Panel();
+            this.SettingsBtn = new System.Windows.Forms.Button();
+            this.TimeLabel = new System.Windows.Forms.Label();
+            this.LogoBox = new System.Windows.Forms.PictureBox();
             this.minBtn = new System.Windows.Forms.Button();
             this.closeBtn = new System.Windows.Forms.Button();
             this.leftPanel = new System.Windows.Forms.Panel();
             this.rightPanel = new System.Windows.Forms.Panel();
             this.rightPanelFlow = new System.Windows.Forms.FlowLayoutPanel();
             this.weatherPanel = new System.Windows.Forms.TableLayoutPanel();
+            this.WeatherIcon = new System.Windows.Forms.PictureBox();
+            this.WeatherButton = new System.Windows.Forms.Button();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.MarketBox = new System.Windows.Forms.TextBox();
             this.MarketLabel = new System.Windows.Forms.Label();
             this.MarketButton = new System.Windows.Forms.Button();
+            this.MarketIcon = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.ramBar = new System.Windows.Forms.ProgressBar();
-            this.PerformanceButton = new System.Windows.Forms.Button();
             this.cpuLabel = new System.Windows.Forms.Label();
             this.ramLabel = new System.Windows.Forms.Label();
             this.cpuBar = new System.Windows.Forms.ProgressBar();
             this.separatorPanel = new System.Windows.Forms.Panel();
-            this.WeatherIcon = new System.Windows.Forms.PictureBox();
-            this.MarketIcon = new System.Windows.Forms.PictureBox();
-            this.LogoBox = new System.Windows.Forms.PictureBox();
-            this.SettingsBtn = new System.Windows.Forms.Button();
-            this.TimeLabel = new System.Windows.Forms.Label();
+            this.watchTimer = new System.Windows.Forms.Timer(this.components);
+            this.weatherTimer = new System.Windows.Forms.Timer(this.components);
+            this.performanceTimer = new System.Windows.Forms.Timer(this.components);
+            this.mailTimer = new System.Windows.Forms.Timer(this.components);
             this.titlePanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.LogoBox)).BeginInit();
             this.rightPanel.SuspendLayout();
             this.rightPanelFlow.SuspendLayout();
             this.weatherPanel.SuspendLayout();
-            this.tableLayoutPanel2.SuspendLayout();
-            this.tableLayoutPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.WeatherIcon)).BeginInit();
+            this.tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.MarketIcon)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.LogoBox)).BeginInit();
+            this.tableLayoutPanel3.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // WeatherButton
-            // 
-            this.WeatherButton.BackgroundImage = global::MyAppliedProject.Properties.Resources.search;
-            this.WeatherButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.WeatherButton.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.WeatherButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.WeatherButton.FlatAppearance.BorderSize = 0;
-            this.WeatherButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.WeatherButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.WeatherButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.WeatherButton.Location = new System.Drawing.Point(96, 3);
-            this.WeatherButton.Name = "WeatherButton";
-            this.WeatherButton.Size = new System.Drawing.Size(25, 21);
-            this.WeatherButton.TabIndex = 2;
-            this.WeatherButton.UseVisualStyleBackColor = true;
-            this.WeatherButton.Click += new System.EventHandler(this.WeatherButton_Click);
             // 
             // WeatherBox
             // 
@@ -98,20 +85,19 @@ namespace MyAppliedProject
             // 
             this.WeatherLabel.AutoSize = true;
             this.WeatherLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.WeatherLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.WeatherLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.WeatherLabel.Location = new System.Drawing.Point(5, 27);
             this.WeatherLabel.Margin = new System.Windows.Forms.Padding(5, 0, 0, 0);
             this.WeatherLabel.Name = "WeatherLabel";
-            this.WeatherLabel.Size = new System.Drawing.Size(28, 17);
+            this.WeatherLabel.Size = new System.Drawing.Size(0, 17);
             this.WeatherLabel.TabIndex = 4;
-            this.WeatherLabel.Text = "----";
             // 
             // titlePanel
             // 
             this.titlePanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.titlePanel.Controls.Add(this.SettingsBtn);
             this.titlePanel.Controls.Add(this.TimeLabel);
             this.titlePanel.Controls.Add(this.LogoBox);
-            this.titlePanel.Controls.Add(this.SettingsBtn);
             this.titlePanel.Controls.Add(this.minBtn);
             this.titlePanel.Controls.Add(this.closeBtn);
             this.titlePanel.Dock = System.Windows.Forms.DockStyle.Top;
@@ -120,6 +106,52 @@ namespace MyAppliedProject
             this.titlePanel.Padding = new System.Windows.Forms.Padding(3);
             this.titlePanel.Size = new System.Drawing.Size(400, 30);
             this.titlePanel.TabIndex = 19;
+            this.titlePanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.titlePanel_MouseDown);
+            this.titlePanel.MouseMove += new System.Windows.Forms.MouseEventHandler(this.titlePanel_MouseMove);
+            this.titlePanel.MouseUp += new System.Windows.Forms.MouseEventHandler(this.titlePanel_MouseUp);
+            // 
+            // SettingsBtn
+            // 
+            this.SettingsBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.SettingsBtn.BackgroundImage = global::MyAppliedProject.Properties.Resources.settings;
+            this.SettingsBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.SettingsBtn.Dock = System.Windows.Forms.DockStyle.Right;
+            this.SettingsBtn.FlatAppearance.BorderSize = 0;
+            this.SettingsBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.SettingsBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SettingsBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.SettingsBtn.Location = new System.Drawing.Point(319, 3);
+            this.SettingsBtn.Margin = new System.Windows.Forms.Padding(5);
+            this.SettingsBtn.Name = "SettingsBtn";
+            this.SettingsBtn.Padding = new System.Windows.Forms.Padding(3);
+            this.SettingsBtn.Size = new System.Drawing.Size(24, 24);
+            this.SettingsBtn.TabIndex = 27;
+            this.SettingsBtn.UseVisualStyleBackColor = false;
+            this.SettingsBtn.Click += new System.EventHandler(this.SettingsBtn_Click);
+            // 
+            // TimeLabel
+            // 
+            this.TimeLabel.AutoSize = true;
+            this.TimeLabel.Dock = System.Windows.Forms.DockStyle.Left;
+            this.TimeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TimeLabel.Location = new System.Drawing.Point(28, 3);
+            this.TimeLabel.Name = "TimeLabel";
+            this.TimeLabel.Size = new System.Drawing.Size(66, 26);
+            this.TimeLabel.TabIndex = 25;
+            this.TimeLabel.Text = "00:00";
+            // 
+            // LogoBox
+            // 
+            this.LogoBox.BackgroundImage = global::MyAppliedProject.Properties.Resources.placeholderlogo;
+            this.LogoBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.LogoBox.Dock = System.Windows.Forms.DockStyle.Left;
+            this.LogoBox.Location = new System.Drawing.Point(3, 3);
+            this.LogoBox.Margin = new System.Windows.Forms.Padding(5);
+            this.LogoBox.Name = "LogoBox";
+            this.LogoBox.Padding = new System.Windows.Forms.Padding(3);
+            this.LogoBox.Size = new System.Drawing.Size(25, 24);
+            this.LogoBox.TabIndex = 24;
+            this.LogoBox.TabStop = false;
             // 
             // minBtn
             // 
@@ -202,6 +234,34 @@ namespace MyAppliedProject
             this.weatherPanel.Size = new System.Drawing.Size(124, 55);
             this.weatherPanel.TabIndex = 15;
             // 
+            // WeatherIcon
+            // 
+            this.WeatherIcon.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.WeatherIcon.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.WeatherIcon.Location = new System.Drawing.Point(96, 30);
+            this.WeatherIcon.Name = "WeatherIcon";
+            this.WeatherIcon.Size = new System.Drawing.Size(25, 22);
+            this.WeatherIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.WeatherIcon.TabIndex = 5;
+            this.WeatherIcon.TabStop = false;
+            // 
+            // WeatherButton
+            // 
+            this.WeatherButton.BackgroundImage = global::MyAppliedProject.Properties.Resources.search;
+            this.WeatherButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.WeatherButton.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.WeatherButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.WeatherButton.FlatAppearance.BorderSize = 0;
+            this.WeatherButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.WeatherButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.WeatherButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.WeatherButton.Location = new System.Drawing.Point(96, 3);
+            this.WeatherButton.Name = "WeatherButton";
+            this.WeatherButton.Size = new System.Drawing.Size(25, 21);
+            this.WeatherButton.TabIndex = 2;
+            this.WeatherButton.UseVisualStyleBackColor = true;
+            this.WeatherButton.Click += new System.EventHandler(this.WeatherButton_Click);
+            // 
             // tableLayoutPanel2
             // 
             this.tableLayoutPanel2.ColumnCount = 2;
@@ -235,24 +295,23 @@ namespace MyAppliedProject
             // 
             this.MarketLabel.AutoSize = true;
             this.MarketLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MarketLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.MarketLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.MarketLabel.Location = new System.Drawing.Point(5, 27);
             this.MarketLabel.Margin = new System.Windows.Forms.Padding(5, 0, 0, 0);
             this.MarketLabel.Name = "MarketLabel";
-            this.MarketLabel.Size = new System.Drawing.Size(19, 13);
+            this.MarketLabel.Size = new System.Drawing.Size(0, 13);
             this.MarketLabel.TabIndex = 4;
-            this.MarketLabel.Text = "----";
             // 
             // MarketButton
             // 
             this.MarketButton.BackgroundImage = global::MyAppliedProject.Properties.Resources.search;
-            this.MarketButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.MarketButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.MarketButton.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.MarketButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.MarketButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.MarketButton.FlatAppearance.BorderSize = 0;
             this.MarketButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.MarketButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MarketButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.MarketButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.MarketButton.Location = new System.Drawing.Point(96, 3);
             this.MarketButton.Name = "MarketButton";
             this.MarketButton.Size = new System.Drawing.Size(25, 21);
@@ -260,78 +319,70 @@ namespace MyAppliedProject
             this.MarketButton.UseVisualStyleBackColor = true;
             this.MarketButton.Click += new System.EventHandler(this.MarketButton_Click);
             // 
+            // MarketIcon
+            // 
+            this.MarketIcon.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.MarketIcon.Location = new System.Drawing.Point(96, 30);
+            this.MarketIcon.Name = "MarketIcon";
+            this.MarketIcon.Size = new System.Drawing.Size(25, 22);
+            this.MarketIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.MarketIcon.TabIndex = 5;
+            this.MarketIcon.TabStop = false;
+            // 
             // tableLayoutPanel3
             // 
             this.tableLayoutPanel3.ColumnCount = 2;
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 68F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 32F));
-            this.tableLayoutPanel3.Controls.Add(this.ramBar, 0, 2);
-            this.tableLayoutPanel3.Controls.Add(this.PerformanceButton, 1, 0);
-            this.tableLayoutPanel3.Controls.Add(this.cpuLabel, 1, 1);
-            this.tableLayoutPanel3.Controls.Add(this.ramLabel, 1, 2);
-            this.tableLayoutPanel3.Controls.Add(this.cpuBar, 0, 1);
+            this.tableLayoutPanel3.Controls.Add(this.ramBar, 0, 1);
+            this.tableLayoutPanel3.Controls.Add(this.cpuLabel, 1, 0);
+            this.tableLayoutPanel3.Controls.Add(this.ramLabel, 1, 1);
+            this.tableLayoutPanel3.Controls.Add(this.cpuBar, 0, 0);
             this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 189);
             this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(3, 3, 3, 30);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
-            this.tableLayoutPanel3.RowCount = 3;
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 34F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(124, 82);
+            this.tableLayoutPanel3.RowCount = 2;
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(124, 62);
             this.tableLayoutPanel3.TabIndex = 16;
             // 
             // ramBar
             // 
             this.ramBar.Dock = System.Windows.Forms.DockStyle.Top;
             this.ramBar.ForeColor = System.Drawing.Color.Teal;
-            this.ramBar.Location = new System.Drawing.Point(3, 57);
+            this.ramBar.Location = new System.Drawing.Point(3, 34);
             this.ramBar.Name = "ramBar";
             this.ramBar.Size = new System.Drawing.Size(78, 10);
             this.ramBar.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
             this.ramBar.TabIndex = 8;
             // 
-            // PerformanceButton
-            // 
-            this.PerformanceButton.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.PerformanceButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.PerformanceButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.PerformanceButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PerformanceButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.PerformanceButton.Location = new System.Drawing.Point(87, 3);
-            this.PerformanceButton.Name = "PerformanceButton";
-            this.PerformanceButton.Size = new System.Drawing.Size(34, 21);
-            this.PerformanceButton.TabIndex = 2;
-            this.PerformanceButton.Text = "Get";
-            this.PerformanceButton.UseVisualStyleBackColor = true;
-            this.PerformanceButton.Click += new System.EventHandler(this.PerformanceButton_Click);
-            // 
             // cpuLabel
             // 
             this.cpuLabel.AutoSize = true;
-            this.cpuLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.cpuLabel.Location = new System.Drawing.Point(89, 27);
+            this.cpuLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.cpuLabel.Location = new System.Drawing.Point(89, 0);
             this.cpuLabel.Margin = new System.Windows.Forms.Padding(5, 0, 0, 0);
             this.cpuLabel.Name = "cpuLabel";
-            this.cpuLabel.Size = new System.Drawing.Size(19, 13);
+            this.cpuLabel.Size = new System.Drawing.Size(0, 13);
             this.cpuLabel.TabIndex = 4;
-            this.cpuLabel.Text = "----";
             // 
             // ramLabel
             // 
             this.ramLabel.AutoSize = true;
-            this.ramLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.ramLabel.Location = new System.Drawing.Point(89, 54);
+            this.ramLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.ramLabel.Location = new System.Drawing.Point(89, 31);
             this.ramLabel.Margin = new System.Windows.Forms.Padding(5, 0, 0, 0);
             this.ramLabel.Name = "ramLabel";
-            this.ramLabel.Size = new System.Drawing.Size(19, 13);
+            this.ramLabel.Size = new System.Drawing.Size(0, 13);
             this.ramLabel.TabIndex = 5;
-            this.ramLabel.Text = "----";
             // 
             // cpuBar
             // 
             this.cpuBar.Dock = System.Windows.Forms.DockStyle.Top;
             this.cpuBar.ForeColor = System.Drawing.Color.Teal;
-            this.cpuBar.Location = new System.Drawing.Point(3, 30);
+            this.cpuBar.Location = new System.Drawing.Point(3, 3);
             this.cpuBar.Name = "cpuBar";
             this.cpuBar.Size = new System.Drawing.Size(78, 10);
             this.cpuBar.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
@@ -347,69 +398,26 @@ namespace MyAppliedProject
             this.separatorPanel.Size = new System.Drawing.Size(1, 370);
             this.separatorPanel.TabIndex = 22;
             // 
-            // WeatherIcon
+            // watchTimer
             // 
-            this.WeatherIcon.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.WeatherIcon.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.WeatherIcon.Location = new System.Drawing.Point(96, 30);
-            this.WeatherIcon.Name = "WeatherIcon";
-            this.WeatherIcon.Size = new System.Drawing.Size(25, 22);
-            this.WeatherIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.WeatherIcon.TabIndex = 5;
-            this.WeatherIcon.TabStop = false;
+            this.watchTimer.Enabled = true;
+            this.watchTimer.Interval = 60000;
+            this.watchTimer.Tick += new System.EventHandler(this.watchTimer_Tick);
             // 
-            // MarketIcon
+            // weatherTimer
             // 
-            this.MarketIcon.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.MarketIcon.Location = new System.Drawing.Point(96, 30);
-            this.MarketIcon.Name = "MarketIcon";
-            this.MarketIcon.Size = new System.Drawing.Size(25, 22);
-            this.MarketIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.MarketIcon.TabIndex = 5;
-            this.MarketIcon.TabStop = false;
+            this.weatherTimer.Interval = 300000;
+            this.weatherTimer.Tick += new System.EventHandler(this.weatherTimer_Tick);
             // 
-            // LogoBox
+            // performanceTimer
             // 
-            this.LogoBox.BackgroundImage = global::MyAppliedProject.Properties.Resources.placeholderlogo;
-            this.LogoBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.LogoBox.Dock = System.Windows.Forms.DockStyle.Left;
-            this.LogoBox.Location = new System.Drawing.Point(3, 3);
-            this.LogoBox.Margin = new System.Windows.Forms.Padding(5);
-            this.LogoBox.Name = "LogoBox";
-            this.LogoBox.Padding = new System.Windows.Forms.Padding(3);
-            this.LogoBox.Size = new System.Drawing.Size(25, 24);
-            this.LogoBox.TabIndex = 24;
-            this.LogoBox.TabStop = false;
+            this.performanceTimer.Interval = 2000;
+            this.performanceTimer.Tick += new System.EventHandler(this.performanceTimer_Tick);
             // 
-            // SettingsBtn
+            // mailTimer
             // 
-            this.SettingsBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.SettingsBtn.BackgroundImage = global::MyAppliedProject.Properties.Resources.settings;
-            this.SettingsBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.SettingsBtn.Dock = System.Windows.Forms.DockStyle.Right;
-            this.SettingsBtn.FlatAppearance.BorderSize = 0;
-            this.SettingsBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.SettingsBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SettingsBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.SettingsBtn.Location = new System.Drawing.Point(323, 3);
-            this.SettingsBtn.Margin = new System.Windows.Forms.Padding(5);
-            this.SettingsBtn.Name = "SettingsBtn";
-            this.SettingsBtn.Padding = new System.Windows.Forms.Padding(3);
-            this.SettingsBtn.Size = new System.Drawing.Size(20, 24);
-            this.SettingsBtn.TabIndex = 23;
-            this.SettingsBtn.UseVisualStyleBackColor = false;
-            this.SettingsBtn.Click += new System.EventHandler(this.SettingsBtn_Click);
-            // 
-            // TimeLabel
-            // 
-            this.TimeLabel.AutoSize = true;
-            this.TimeLabel.Dock = System.Windows.Forms.DockStyle.Left;
-            this.TimeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TimeLabel.Location = new System.Drawing.Point(28, 3);
-            this.TimeLabel.Name = "TimeLabel";
-            this.TimeLabel.Size = new System.Drawing.Size(71, 29);
-            this.TimeLabel.TabIndex = 25;
-            this.TimeLabel.Text = "00:00";
+            this.mailTimer.Interval = 300000;
+            this.mailTimer.Tick += new System.EventHandler(this.mailTimer_Tick);
             // 
             // BaseForm
             // 
@@ -427,17 +435,17 @@ namespace MyAppliedProject
             this.Name = "BaseForm";
             this.titlePanel.ResumeLayout(false);
             this.titlePanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.LogoBox)).EndInit();
             this.rightPanel.ResumeLayout(false);
             this.rightPanelFlow.ResumeLayout(false);
             this.weatherPanel.ResumeLayout(false);
             this.weatherPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.WeatherIcon)).EndInit();
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.MarketIcon)).EndInit();
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.WeatherIcon)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.MarketIcon)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.LogoBox)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -459,16 +467,19 @@ namespace MyAppliedProject
         private System.Windows.Forms.Button MarketButton;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
         private System.Windows.Forms.Label cpuLabel;
-        private System.Windows.Forms.Button PerformanceButton;
         private System.Windows.Forms.Panel separatorPanel;
         private System.Windows.Forms.ProgressBar ramBar;
         private System.Windows.Forms.Label ramLabel;
         private System.Windows.Forms.ProgressBar cpuBar;
         private System.Windows.Forms.PictureBox WeatherIcon;
         private System.Windows.Forms.PictureBox MarketIcon;
-        private System.Windows.Forms.Button SettingsBtn;
         private System.Windows.Forms.PictureBox LogoBox;
         private System.Windows.Forms.Label TimeLabel;
+        private System.Windows.Forms.Button SettingsBtn;
+        private System.Windows.Forms.Timer watchTimer;
+        private System.Windows.Forms.Timer weatherTimer;
+        private System.Windows.Forms.Timer performanceTimer;
+        private System.Windows.Forms.Timer mailTimer;
     }
 }
 

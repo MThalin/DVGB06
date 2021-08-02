@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace MyAppliedProject
@@ -20,12 +21,19 @@ namespace MyAppliedProject
             savePass = SaveCheck.Checked;
         }
 
+        public void SetColor (Color c, Color c2)
+        {          
+            signInBtn.ForeColor = c;
+            OutlookButton.ForeColor = c;
+            GmailButton.ForeColor = c;
+        }
+
         private void signInBtn_Click(object sender, EventArgs e)
         {
             bForm.SignIn(UserLoginBox.Text, PassLoginBox.Text, email, savePass);
         }
 
-        public void SetCookieData(string mail, string gUser, string gPass, string oUser, string oPass)
+        public void SetCookieData(string mail, string passCheck, string gUser, string gPass, string oUser, string oPass)
         {
             email = mail;
             gmailUser = gUser;
@@ -33,15 +41,20 @@ namespace MyAppliedProject
             outlookUser = oUser;
             outlookPass = oPass;
 
+            if (passCheck == "True") { SaveCheck.Checked = true; }
+            else { SaveCheck.Checked = false; }
+
             switch (email)
             {
                 case "gmail":
-                    GmailButton.ForeColor = System.Drawing.Color.FromArgb(128, 255, 255);
+                    GmailButton.FlatAppearance.BorderSize = 1;
+                    OutlookButton.FlatAppearance.BorderSize = 0;
                     UserLoginBox.Text = gmailUser;
                     PassLoginBox.Text = gmailPass;
                     break;
                 case "outlook":
-                    OutlookButton.ForeColor = System.Drawing.Color.FromArgb(128, 255, 255);
+                    OutlookButton.FlatAppearance.BorderSize = 1;
+                    GmailButton.FlatAppearance.BorderSize = 0;
                     UserLoginBox.Text = outlookUser;
                     PassLoginBox.Text = outlookPass;
                     break;
@@ -50,16 +63,11 @@ namespace MyAppliedProject
             }
         }
 
-        public void PopMsg()
-        {
-            MessageBox.Show("Something went wrong!\nMake sure you entered the correct username & password.");
-        }
-
         private void GmailButton_Click(object sender, EventArgs e)
         {
             email = "gmail";
-            GmailButton.ForeColor = System.Drawing.Color.FromArgb(128, 255, 255);
-            OutlookButton.ForeColor = System.Drawing.Color.FromArgb(64, 64, 64);
+            GmailButton.FlatAppearance.BorderSize = 1;
+            OutlookButton.FlatAppearance.BorderSize = 0;
             UserLoginBox.Text = gmailUser;
             PassLoginBox.Text = gmailPass;
         }
@@ -67,8 +75,8 @@ namespace MyAppliedProject
         private void OutlookButton_Click(object sender, EventArgs e)
         {
             email = "outlook";
-            OutlookButton.ForeColor = System.Drawing.Color.FromArgb(128, 255, 255);
-            GmailButton.ForeColor = System.Drawing.Color.FromArgb(64, 64, 64);
+            OutlookButton.FlatAppearance.BorderSize = 1;
+            GmailButton.FlatAppearance.BorderSize = 0;
             UserLoginBox.Text = outlookUser;
             PassLoginBox.Text = outlookPass;
         }

@@ -35,9 +35,9 @@ namespace MyAppliedProject
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.signInBtn = new System.Windows.Forms.Button();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.SaveCheck = new System.Windows.Forms.CheckBox();
             this.OutlookButton = new System.Windows.Forms.Button();
             this.GmailButton = new System.Windows.Forms.Button();
+            this.SaveCheck = new System.Windows.Forms.CheckBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.SuspendLayout();
@@ -122,6 +122,36 @@ namespace MyAppliedProject
             this.tableLayoutPanel2.Size = new System.Drawing.Size(219, 44);
             this.tableLayoutPanel2.TabIndex = 22;
             // 
+            // OutlookButton
+            // 
+            this.OutlookButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("OutlookButton.BackgroundImage")));
+            this.OutlookButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.OutlookButton.FlatAppearance.BorderSize = 0;
+            this.OutlookButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.OutlookButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.OutlookButton.Location = new System.Drawing.Point(115, 7);
+            this.OutlookButton.Margin = new System.Windows.Forms.Padding(7);
+            this.OutlookButton.Name = "OutlookButton";
+            this.OutlookButton.Size = new System.Drawing.Size(38, 30);
+            this.OutlookButton.TabIndex = 1;
+            this.OutlookButton.UseVisualStyleBackColor = true;
+            this.OutlookButton.Click += new System.EventHandler(this.OutlookButton_Click);
+            // 
+            // GmailButton
+            // 
+            this.GmailButton.BackgroundImage = global::MyAppliedProject.Properties.Resources.gmail_logo;
+            this.GmailButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.GmailButton.FlatAppearance.BorderSize = 0;
+            this.GmailButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.GmailButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.GmailButton.Location = new System.Drawing.Point(61, 7);
+            this.GmailButton.Margin = new System.Windows.Forms.Padding(7);
+            this.GmailButton.Name = "GmailButton";
+            this.GmailButton.Size = new System.Drawing.Size(38, 30);
+            this.GmailButton.TabIndex = 0;
+            this.GmailButton.UseVisualStyleBackColor = true;
+            this.GmailButton.Click += new System.EventHandler(this.GmailButton_Click);
+            // 
             // SaveCheck
             // 
             this.SaveCheck.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -138,34 +168,6 @@ namespace MyAppliedProject
             this.SaveCheck.Text = "Save Password";
             this.SaveCheck.UseVisualStyleBackColor = true;
             this.SaveCheck.CheckedChanged += new System.EventHandler(this.SaveCheck_CheckedChanged);
-            // 
-            // OutlookButton
-            // 
-            this.OutlookButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("OutlookButton.BackgroundImage")));
-            this.OutlookButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.OutlookButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.OutlookButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.OutlookButton.Location = new System.Drawing.Point(115, 7);
-            this.OutlookButton.Margin = new System.Windows.Forms.Padding(7);
-            this.OutlookButton.Name = "OutlookButton";
-            this.OutlookButton.Size = new System.Drawing.Size(38, 30);
-            this.OutlookButton.TabIndex = 1;
-            this.OutlookButton.UseVisualStyleBackColor = true;
-            this.OutlookButton.Click += new System.EventHandler(this.OutlookButton_Click);
-            // 
-            // GmailButton
-            // 
-            this.GmailButton.BackgroundImage = global::MyAppliedProject.Properties.Resources.gmail_logo;
-            this.GmailButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.GmailButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.GmailButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.GmailButton.Location = new System.Drawing.Point(61, 7);
-            this.GmailButton.Margin = new System.Windows.Forms.Padding(7);
-            this.GmailButton.Name = "GmailButton";
-            this.GmailButton.Size = new System.Drawing.Size(38, 30);
-            this.GmailButton.TabIndex = 0;
-            this.GmailButton.UseVisualStyleBackColor = true;
-            this.GmailButton.Click += new System.EventHandler(this.GmailButton_Click);
             // 
             // LoginForm
             // 
