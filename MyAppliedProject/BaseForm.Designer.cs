@@ -406,7 +406,7 @@ namespace MyAppliedProject
             // 
             // weatherTimer
             // 
-            this.weatherTimer.Interval = 300000;
+            this.weatherTimer.Interval = 10000;
             this.weatherTimer.Tick += new System.EventHandler(this.weatherTimer_Tick);
             // 
             // performanceTimer
@@ -416,7 +416,7 @@ namespace MyAppliedProject
             // 
             // mailTimer
             // 
-            this.mailTimer.Interval = 300000;
+            this.mailTimer.Interval = 10000;
             this.mailTimer.Tick += new System.EventHandler(this.mailTimer_Tick);
             // 
             // BaseForm

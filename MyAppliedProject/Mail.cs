@@ -1,5 +1,4 @@
 ﻿using AE.Net.Mail;
-using System;
 
 namespace MyAppliedProject
 {
@@ -33,6 +32,11 @@ namespace MyAppliedProject
             }
         }
 
+        public void Logout()
+        {
+            ic = null;
+        }
+
         public void GetEmails()
         {
             ic.SelectMailbox("INBOX");
@@ -40,12 +44,12 @@ namespace MyAppliedProject
             var email1 = ic.GetMessage(ic.GetMessageCount() - 1);
             from1 = email1.From.ToString();
             subject1 = email1.Subject;
-            body1 = email1.Body;
+            body1 = email1.Body.Trim();
 
             var email2 = ic.GetMessage(ic.GetMessageCount() - 2);
             from2 = email2.From.ToString();
             subject2 = email2.Subject;
-            body2 = email2.Body;
+            body2 = email2.Body.Trim();
 
             co.MailReAction(from1, from2, subject1, subject2, body1, body2);
         }

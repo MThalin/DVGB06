@@ -21,16 +21,13 @@ namespace MyAppliedProject
             savePass = SaveCheck.Checked;
         }
 
+        //SETTINGS.-------------------------------------------------------------------------------
+
         public void SetColor (Color c, Color c2)
         {          
             signInBtn.ForeColor = c;
             OutlookButton.ForeColor = c;
             GmailButton.ForeColor = c;
-        }
-
-        private void signInBtn_Click(object sender, EventArgs e)
-        {
-            bForm.SignIn(UserLoginBox.Text, PassLoginBox.Text, email, savePass);
         }
 
         public void SetCookieData(string mail, string passCheck, string gUser, string gPass, string oUser, string oPass)
@@ -63,6 +60,13 @@ namespace MyAppliedProject
             }
         }
 
+        //BUTTONS/CHECKBOX.--------------------------------------------------------------------------
+
+        private void signInBtn_Click(object sender, EventArgs e)
+        {
+            bForm.SignIn(UserLoginBox.Text, PassLoginBox.Text, email, savePass);
+        }
+
         private void GmailButton_Click(object sender, EventArgs e)
         {
             email = "gmail";
@@ -80,6 +84,8 @@ namespace MyAppliedProject
             UserLoginBox.Text = outlookUser;
             PassLoginBox.Text = outlookPass;
         }
+
+        //--------------------------
 
         private void SaveCheck_CheckedChanged(object sender, EventArgs e)
         {

@@ -23,6 +23,32 @@ namespace MyAppliedProject
             bmp = new Bitmap(ColorBox.BackgroundImage);
         }
 
+        //CUSTOM TITLE BAR.-------------------------------------------------------------------------------
+
+        private void closeBtn_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+        }
+
+        private void titlePanel_MouseDown(object sender, MouseEventArgs e)
+        {
+            isGrabbing = true;
+            movX = e.X;
+            movY = e.Y;
+        }
+
+        private void titlePanel_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (isGrabbing) { this.SetDesktopLocation(MousePosition.X - movX, MousePosition.Y - movY); }
+        }
+
+        private void titlePanel_MouseUp(object sender, MouseEventArgs e)
+        {
+            isGrabbing = false;
+        }
+
+        //SETTINGS.-------------------------------------------------------------------------------
+
         public void SetColor(Color c, Color c2)
         {
             ClearBtn.ForeColor = c;
@@ -59,27 +85,7 @@ namespace MyAppliedProject
             else { PerformanceCheck.Checked = false; }
         }
 
-        private void closeBtn_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-        }
-
-        private void titlePanel_MouseDown(object sender, MouseEventArgs e)
-        {
-            isGrabbing = true;
-            movX = e.X;
-            movY = e.Y;
-        }
-
-        private void titlePanel_MouseMove(object sender, MouseEventArgs e)
-        {
-            if (isGrabbing) { this.SetDesktopLocation(MousePosition.X - movX, MousePosition.Y - movY); }
-        }
-
-        private void titlePanel_MouseUp(object sender, MouseEventArgs e)
-        {
-            isGrabbing = false;
-        }
+        //BUTTONS.-------------------------------------------------------------------------------
 
         private void SaveBtn_Click(object sender, EventArgs e)
         {
@@ -88,7 +94,14 @@ namespace MyAppliedProject
             bForm.SaveSettings(col, WeatherCheck.Checked, MarketCheck.Checked, PerformanceCheck.Checked);
         }
 
-        private void ClearBtn_Click(object sender, EventArgs e) { bForm.ClearSettings(); }
+        private void ClearBtn_Click(object sender, EventArgs e)
+        {
+            DialogResult dr = MessageBox.Show("Are you sure?\n\nThis will reset all settings to default and delete all saved data, such as email credentials and recent search terms etc..", "Clearing settings and data", MessageBoxButtons.YesNo);
+
+            if (dr == DialogResult.Yes) { bForm.ClearSettings(); }
+        }
+
+        //---------------------------
 
         private void upBtn_Click(object sender, EventArgs e) { bForm.HeightMinus(); }
 
@@ -97,6 +110,8 @@ namespace MyAppliedProject
         private void rightBtn_Click(object sender, EventArgs e) { bForm.WidthPlus(); }
 
         private void leftBtn_Click(object sender, EventArgs e) { bForm.WidthMinus(); }
+
+        //CHECKBOXES.-------------------------------------------------------------------------------
 
         private void WeatherCheck_CheckedChanged(object sender, EventArgs e)
         {
@@ -118,6 +133,8 @@ namespace MyAppliedProject
             else { performance = false; }
             bForm.showPerformance(performance);
         }
+
+        //CUSTOM COLOR PICKER.-------------------------------------------------------------------------------
 
         private void ColorBox_MouseDown(object sender, MouseEventArgs e)
         {

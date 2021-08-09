@@ -1,5 +1,4 @@
 ﻿
-
 namespace MyAppliedProject
 {
     class Controller
@@ -21,6 +20,13 @@ namespace MyAppliedProject
             pe = new Performance(this);
         }
 
+        public void PopUp(string msg)
+        {
+            bForm.PopMsg(msg);
+        }
+
+        //WEATHER.------------------------------------------------------------------------------
+
         public void WeatherAction(string city)
         {
             we.GetWeather(city);
@@ -30,6 +36,8 @@ namespace MyAppliedProject
         {
             bForm.SetWeather(weather, condition);
         }
+
+        //MARKET.------------------------------------------------------------------------------
 
         public void MarketAction(string stock)
         {
@@ -41,9 +49,28 @@ namespace MyAppliedProject
             bForm.SetChange(change);
         }
 
+        //PERFORMANCE.------------------------------------------------------------------------------
+
+        public void PerformanceAction()
+        {
+            pe.GetPerformance();
+        }
+
+        public void PerformanceReAction(int cpu, int ram)
+        {
+            bForm.SetPerformance(cpu, ram);
+        }
+
+        //EMAIL.------------------------------------------------------------------------------
+
         public void MailLogin(string mail, string user, string pass)
         {
             ml.Login(mail, user, pass);
+        }
+
+        public void MailLogout()
+        {
+            ml.Logout();
         }
 
         public void MailAction()
@@ -56,10 +83,7 @@ namespace MyAppliedProject
             bForm.UpdateMail(f1, f2, s1, s2, b1, b2);
         }
 
-        public void PopUp(string msg)
-        {
-            bForm.PopMsg(msg);
-        }
+        //FILE.------------------------------------------------------------------------------
 
         public void FileAction(string element, string content)
         {
@@ -70,16 +94,5 @@ namespace MyAppliedProject
         {
             bForm.SetCookieData(rgb, height, width, passCheck, mail, gUser, gPass, oUser, oPass, wCheck, wCity, mCheck, mStock, pCheck);
         }
-
-        public void PerformanceAction()
-        {
-            pe.GetPerformance();
-        }
-
-        public void PerformanceReAction(int cpu, int ram)
-        {
-            bForm.SetPerformance(cpu, ram);
-        }
-
     }
 }

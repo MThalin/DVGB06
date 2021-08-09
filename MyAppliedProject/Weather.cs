@@ -1,7 +1,7 @@
 ﻿using Newtonsoft.Json.Linq;
 using System;
 using System.Net.Http;
-
+using System.Threading.Tasks;
 
 namespace MyAppliedProject
 {
@@ -19,17 +19,17 @@ namespace MyAppliedProject
             id = "6fa49b63cc06c4714a8268fda07fa8e1";
         }
 
-        public void GetWeather(string cityIn)
+        public async void GetWeather(string cityIn)
         {
-            if (cityIn != "update")
+            if (cityIn != "#update#")
             {
                 city = cityIn;
             }
-            
-            GetWeatherData();
+
+            await GetWeatherData();
         }
 
-        private async void GetWeatherData()
+        private async Task GetWeatherData()
         {
             url = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&units=metric&appid=" + id;
 

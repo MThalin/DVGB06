@@ -1,7 +1,7 @@
 ﻿using Newtonsoft.Json.Linq;
 using System;
 using System.Net.Http;
-
+using System.Threading.Tasks;
 
 namespace MyAppliedProject
 {
@@ -19,18 +19,13 @@ namespace MyAppliedProject
             id = "9c7ddef97dmshd96741f13a5fd7bp16da3djsn25cf8f5c6079";
         }
 
-        public void GetMarket(string stockIn)
+        public async void GetMarket(string stockIn)
         {
             stock = stockIn;
-            GetMarketData();
+            await GetMarketData();
         }
 
-        public void SetChange(string change)
-        {
-            co.MarketReAction(change);
-        }
-
-        private async void GetMarketData()
+        private async Task GetMarketData()
         {
                url = "https://www.alphavantage.co/query?function=GLOBAL_QUOTE&symbol=" + stock + "&apikey=" + id;
 
@@ -52,18 +47,18 @@ namespace MyAppliedProject
 
                         if (!change.Contains("-")) { change = "+" + change; }
 
-                        SetChange(change);
+                        co.MarketReAction(change);
                     }
                     else
                     {
-                        SetChange("N/A");
+                        co.MarketReAction("N/A");
                     }
                 }
 
                 catch (Exception ex)
                 {
                     Console.WriteLine(ex);
-                    SetChange("N/A");
+                    co.MarketReAction("N/A");
                 }
             }
         }
