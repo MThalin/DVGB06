@@ -126,7 +126,7 @@ namespace MyAppliedProject
             sForm.SetColor(c, c2);
         }
 
-        public void SetCookieData(string rgb, string height, string width, string passCheck, string mail, string gUser, string gPass, string oUser, string oPass, string wCheck, string wCity, string mCheck, string mStock, string pCheck)
+        public void SetCookieData(string rgb, string height, string width, string passCheck, string mail, string gUser, string gPass, string oUser, string oPass, string rUser, string rPass, string wCheck, string wCity, string mCheck, string mStock, string pCheck)
         {
             Color col = Color.FromArgb(Convert.ToInt32(rgb.Split(',')[0]), Convert.ToInt32(rgb.Split(',')[1]), Convert.ToInt32(rgb.Split(',')[2]));
             Color col2 = Color.FromArgb((int)(col.R * 0.25), (int)(col.G * 0.25), (int)(col.B * 0.25));
@@ -144,7 +144,7 @@ namespace MyAppliedProject
             if (pCheck == "True") { showPerformance(true); }
             else { showPerformance(false); }
 
-            lForm.SetCookieData(mail, passCheck, gUser, gPass, oUser, oPass);
+            lForm.SetCookieData(mail, passCheck, gUser, gPass, oUser, oPass, rUser, rPass);
             sForm.SetCookieData(col, col2, wCheck, mCheck, pCheck);
         }
 

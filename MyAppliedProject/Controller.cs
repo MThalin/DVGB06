@@ -90,9 +90,9 @@ namespace MyAppliedProject
             fh.EditXML(element, content);
         }
 
-        public void FileReAction(string rgb, string height, string width, string passCheck, string mail, string gUser, string gPass, string oUser, string oPass, string wCheck, string wCity, string mCheck, string mStock, string pCheck)
+        public void FileReAction(string rgb, string height, string width, string passCheck, string mail, string gUser, string gPass, string oUser, string oPass, string rUser, string rPass, string wCheck, string wCity, string mCheck, string mStock, string pCheck)
         {
-            bForm.SetCookieData(rgb, height, width, passCheck, mail, gUser, gPass, oUser, oPass, wCheck, wCity, mCheck, mStock, pCheck);
+            bForm.SetCookieData(rgb, height, width, passCheck, mail, gUser, gPass, oUser, oPass, rUser, rPass, wCheck, wCity, mCheck, mStock, pCheck);
         }
     }
 }

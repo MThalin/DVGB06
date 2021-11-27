@@ -125,6 +125,7 @@ namespace MyAppliedProject
             this.upBtn.Dock = System.Windows.Forms.DockStyle.Fill;
             this.upBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.upBtn.FlatAppearance.BorderSize = 0;
+            this.upBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
             this.upBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.upBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.upBtn.Location = new System.Drawing.Point(52, 3);
@@ -142,6 +143,7 @@ namespace MyAppliedProject
             this.leftBtn.Dock = System.Windows.Forms.DockStyle.Fill;
             this.leftBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.leftBtn.FlatAppearance.BorderSize = 0;
+            this.leftBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
             this.leftBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.leftBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.leftBtn.Location = new System.Drawing.Point(3, 47);
@@ -159,6 +161,7 @@ namespace MyAppliedProject
             this.rightBtn.Dock = System.Windows.Forms.DockStyle.Fill;
             this.rightBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.rightBtn.FlatAppearance.BorderSize = 0;
+            this.rightBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
             this.rightBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.rightBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.rightBtn.Location = new System.Drawing.Point(101, 47);
@@ -176,6 +179,7 @@ namespace MyAppliedProject
             this.downBtn.Dock = System.Windows.Forms.DockStyle.Fill;
             this.downBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.downBtn.FlatAppearance.BorderSize = 0;
+            this.downBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
             this.downBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.downBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.downBtn.Location = new System.Drawing.Point(52, 91);
@@ -331,6 +335,7 @@ namespace MyAppliedProject
             this.MaximumSize = new System.Drawing.Size(300, 300);
             this.MinimumSize = new System.Drawing.Size(300, 300);
             this.Name = "SettingForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.titlePanel.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);

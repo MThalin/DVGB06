@@ -189,7 +189,7 @@ namespace MyAppliedProject
                     titlePanel.BackColor = c2;
                     closeBtn.BackColor = c2;
                 }
-                catch (Exception ex) { }
+                catch (Exception ex) { Console.WriteLine(ex); }
             }
         }
 

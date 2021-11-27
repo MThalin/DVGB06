@@ -19,6 +19,11 @@ namespace MyAppliedProject
         {
             switch (mail)
             {
+
+                case "roundcube":
+                    ic = new ImapClient("easylin4.easywebbhotell.se", user, pass, AuthMethods.Login, 993, true);
+                    break;
+
                 case "gmail":
                     ic = new ImapClient("imap.gmail.com", user, pass, AuthMethods.Login, 993, true);
                     break;

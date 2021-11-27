@@ -204,5 +204,17 @@
   <ItemGroup>
     <None Include="img\from.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\roundcube-logo-square.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\roundcube-logo.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\roundcube-logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Roundcube-Webmail-Logo.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

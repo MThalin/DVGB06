@@ -4,11 +4,15 @@
   <height>400</height>
   <width>400</width>
   <passcheck>True</passcheck>
-  <chosenmail>gmail</chosenmail>
-  <gmailuser />
-  <gmailpass />
+  <chosenmail>roundcube</chosenmail>
+  <gmailuser>
+  </gmailuser>
+  <gmailpass>
+  </gmailpass>
   <outlookuser />
   <outlookpass />
+  <roundcubeuser></roundcubeuser>
+  <roundcubepass></roundcubepass>
   <weathercheck>True</weathercheck>
   <weathercity />
   <marketcheck>True</marketcheck>

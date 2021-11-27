@@ -252,6 +252,7 @@ namespace MyAppliedProject
             this.WeatherButton.Dock = System.Windows.Forms.DockStyle.Fill;
             this.WeatherButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.WeatherButton.FlatAppearance.BorderSize = 0;
+            this.WeatherButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
             this.WeatherButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.WeatherButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.WeatherButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
@@ -309,6 +310,7 @@ namespace MyAppliedProject
             this.MarketButton.Dock = System.Windows.Forms.DockStyle.Fill;
             this.MarketButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.MarketButton.FlatAppearance.BorderSize = 0;
+            this.MarketButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
             this.MarketButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.MarketButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MarketButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
@@ -401,12 +403,12 @@ namespace MyAppliedProject
             // watchTimer
             // 
             this.watchTimer.Enabled = true;
-            this.watchTimer.Interval = 60000;
+            this.watchTimer.Interval = 30000;
             this.watchTimer.Tick += new System.EventHandler(this.watchTimer_Tick);
             // 
             // weatherTimer
             // 
-            this.weatherTimer.Interval = 10000;
+            this.weatherTimer.Interval = 100000;
             this.weatherTimer.Tick += new System.EventHandler(this.weatherTimer_Tick);
             // 
             // performanceTimer
@@ -433,6 +435,7 @@ namespace MyAppliedProject
             this.MaximumSize = new System.Drawing.Size(400, 800);
             this.MinimumSize = new System.Drawing.Size(250, 400);
             this.Name = "BaseForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.titlePanel.ResumeLayout(false);
             this.titlePanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.LogoBox)).EndInit();

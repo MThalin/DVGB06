@@ -35,9 +35,10 @@ namespace MyAppliedProject
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.signInBtn = new System.Windows.Forms.Button();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.SaveCheck = new System.Windows.Forms.CheckBox();
             this.OutlookButton = new System.Windows.Forms.Button();
             this.GmailButton = new System.Windows.Forms.Button();
-            this.SaveCheck = new System.Windows.Forms.CheckBox();
+            this.RoundcubeButton = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.SuspendLayout();
@@ -114,6 +115,7 @@ namespace MyAppliedProject
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel2.Controls.Add(this.OutlookButton, 2, 0);
             this.tableLayoutPanel2.Controls.Add(this.GmailButton, 1, 0);
+            this.tableLayoutPanel2.Controls.Add(this.RoundcubeButton, 0, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(13, 100);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
@@ -121,6 +123,23 @@ namespace MyAppliedProject
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel2.Size = new System.Drawing.Size(219, 44);
             this.tableLayoutPanel2.TabIndex = 22;
+            // 
+            // SaveCheck
+            // 
+            this.SaveCheck.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.SaveCheck.AutoSize = true;
+            this.SaveCheck.Checked = true;
+            this.SaveCheck.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.SaveCheck.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.SaveCheck.Location = new System.Drawing.Point(135, 297);
+            this.SaveCheck.Margin = new System.Windows.Forms.Padding(50, 3, 3, 3);
+            this.SaveCheck.Name = "SaveCheck";
+            this.SaveCheck.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.SaveCheck.Size = new System.Drawing.Size(97, 17);
+            this.SaveCheck.TabIndex = 23;
+            this.SaveCheck.Text = "Save Password";
+            this.SaveCheck.UseVisualStyleBackColor = true;
+            this.SaveCheck.CheckedChanged += new System.EventHandler(this.SaveCheck_CheckedChanged);
             // 
             // OutlookButton
             // 
@@ -152,22 +171,20 @@ namespace MyAppliedProject
             this.GmailButton.UseVisualStyleBackColor = true;
             this.GmailButton.Click += new System.EventHandler(this.GmailButton_Click);
             // 
-            // SaveCheck
+            // RoundcubeButton
             // 
-            this.SaveCheck.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.SaveCheck.AutoSize = true;
-            this.SaveCheck.Checked = true;
-            this.SaveCheck.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.SaveCheck.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.SaveCheck.Location = new System.Drawing.Point(135, 297);
-            this.SaveCheck.Margin = new System.Windows.Forms.Padding(50, 3, 3, 3);
-            this.SaveCheck.Name = "SaveCheck";
-            this.SaveCheck.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.SaveCheck.Size = new System.Drawing.Size(97, 17);
-            this.SaveCheck.TabIndex = 23;
-            this.SaveCheck.Text = "Save Password";
-            this.SaveCheck.UseVisualStyleBackColor = true;
-            this.SaveCheck.CheckedChanged += new System.EventHandler(this.SaveCheck_CheckedChanged);
+            this.RoundcubeButton.BackgroundImage = global::MyAppliedProject.Properties.Resources.Roundcube_Webmail_Logo;
+            this.RoundcubeButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.RoundcubeButton.FlatAppearance.BorderSize = 0;
+            this.RoundcubeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.RoundcubeButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.RoundcubeButton.Location = new System.Drawing.Point(7, 7);
+            this.RoundcubeButton.Margin = new System.Windows.Forms.Padding(7);
+            this.RoundcubeButton.Name = "RoundcubeButton";
+            this.RoundcubeButton.Size = new System.Drawing.Size(38, 30);
+            this.RoundcubeButton.TabIndex = 2;
+            this.RoundcubeButton.UseVisualStyleBackColor = true;
+            this.RoundcubeButton.Click += new System.EventHandler(this.RoundcubeButton_Click);
             // 
             // LoginForm
             // 
@@ -196,5 +213,6 @@ namespace MyAppliedProject
         private System.Windows.Forms.Button GmailButton;
         private System.Windows.Forms.Button OutlookButton;
         private System.Windows.Forms.CheckBox SaveCheck;
+        private System.Windows.Forms.Button RoundcubeButton;
     }
 }

@@ -181,4 +181,10 @@
   <data name="subject" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\img\subject.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="roundcube_logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\roundcube-logo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Roundcube_Webmail_Logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Roundcube-Webmail-Logo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>

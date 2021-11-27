@@ -39,6 +39,8 @@ namespace MyAppliedProject
                 writer.WriteElementString("gmailpass", "");
                 writer.WriteElementString("outlookuser", "");
                 writer.WriteElementString("outlookpass", "");
+                writer.WriteElementString("roundcubeuser", "");
+                writer.WriteElementString("roundcubepass", "");
                 writer.WriteElementString("weathercheck", "True");
                 writer.WriteElementString("weathercity", "");
                 writer.WriteElementString("marketcheck", "True");
@@ -78,13 +80,15 @@ namespace MyAppliedProject
                 string gmailpass = myNode.SelectSingleNode("gmailpass").InnerText.Trim();
                 string outlookuser = myNode.SelectSingleNode("outlookuser").InnerText.Trim();
                 string outlookpass = myNode.SelectSingleNode("outlookpass").InnerText.Trim();
+                string roundcubeuser = myNode.SelectSingleNode("roundcubeuser").InnerText.Trim();
+                string roundcubepass = myNode.SelectSingleNode("roundcubepass").InnerText.Trim();
                 string weathercheck = myNode.SelectSingleNode("weathercheck").InnerText.Trim();
                 string weathercity = myNode.SelectSingleNode("weathercity").InnerText.Trim();
                 string marketcheck = myNode.SelectSingleNode("marketcheck").InnerText.Trim();
                 string marketstock = myNode.SelectSingleNode("marketstock").InnerText.Trim();
                 string performancecheck = myNode.SelectSingleNode("performancecheck").InnerText.Trim();
 
-                co.FileReAction(rgb, height, width, passcheck, chosenmail, gmailuser, gmailpass, outlookuser, outlookpass, weathercheck, weathercity, marketcheck, marketstock, performancecheck);
+                co.FileReAction(rgb, height, width, passcheck, chosenmail, gmailuser, gmailpass, outlookuser, outlookpass, roundcubeuser, roundcubepass, weathercheck, weathercity, marketcheck, marketstock, performancecheck);
             }
             catch (Exception ex)
             {
@@ -99,7 +103,7 @@ namespace MyAppliedProject
                 if (element == "reset")
                 {
                     CreateXML();
-                    co.FileReAction("128,255,255", "400", "400", "True", "gmail", "", "", "", "", "True", "", "True", "", "False");
+                    co.FileReAction("128,255,255", "400", "400", "True", "gmail", "", "", "", "", "", "", "True", "", "True", "", "False");
                 }
 
                 else 
